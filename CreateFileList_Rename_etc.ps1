@@ -1,7 +1,7 @@
 #1.
-#Final copy and txt file creation program
+#Copy and txt creation for TrakEM2 import
 #Getting path/to/data from user
-#This will loop until user types actual path
+#This will loop until actual path
 ##########################################
 DO
 {
@@ -10,6 +10,8 @@ $pathtest = Test-Path -Path $fileLocation
 } 
 Until 
 ($pathtest -eq $true) 
+
+#Import or rename files (import to TrakEM2 or Save-for-web export)
 
 DO
 {
@@ -244,4 +246,4 @@ $copyreg = $copyregpre +'\.' + $extension
 
 
 
-#Maybe allow specification of copy location
+#End
