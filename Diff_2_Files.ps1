@@ -1,4 +1,6 @@
 #keep only differences from 2 txt files
+#for stepwise import during imaging
+
 $setwd = read-host -prompt "Set working directory"
 cd $setwd
 $oldfilepath = read-host -prompt "Copy the old file name here. Include the extension"
