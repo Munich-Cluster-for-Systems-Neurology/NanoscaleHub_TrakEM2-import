@@ -22,11 +22,13 @@ The exe files CAN ONLY BE STOPPED by killing the task in the task manager or by 
        a7)  8bit or 16bit. Type 8 or 8bit or 16 or 16bit depending on the bit depth you chose in your imaging software. This will set max and min grey-values and 
             image type for TrakEM.
        a8)  File extension. Type the file extension without fullstop. E.g. tif and not .tif.
-       a9)  File name template. If your data follows standard naming schemes of Zeiss ATLAS5 or Thermo MAPS3 you can use templates by typing Zeiss or Thermo. If the               name is different you have to create a name template. In the template you have to replace meaningful digits by #z#, #x# or #y#, random or for   
+       a9)  File name template. If your data follows standard naming schemes of Zeiss ATLAS5 or Thermo MAPS3 you can use templates by typing Zeiss or Thermo. If the   
+       name is different you have to create a name template. In the template you have to replace meaningful digits by #z#, #x# or #y#, random or for   
             alignment/stitching
             irrelevant digits have to be replaced by \d+. A few examples:
             I) Sample_negstain_x1-y5_G216902-J2_0245_Mag-20kx --> Sample_negstain_#x#-#y#_G\d+-J\d+_\d+_Mag-\d+kx
-           (if any of the irrelevant digits is constant it can be kept as is, for example Mag stays 20kx template could be Georg_negstain_#x#-#y#_G\d+-J\d+_\d+_Mag-               20kx)
+           (if any of the irrelevant digits is constant it can be kept as is, for example Mag stays 20kx template could be Georg_negstain_#x#-#y#_G\d+-J\d+_\d+_Mag- 
+           20kx)
             II) image1 --> image#z#
            and so on...
        a10) Copy all files to folder? Type Y to copy all files to a newly created raw_data folder created at ..\specified_path or N to exit script.
@@ -51,19 +53,25 @@ The exe files CAN ONLY BE STOPPED by killing the task in the task manager or by 
             Filenames if greatgrand was typed are somename-imagex1y1.tif,somename-imagex1y1.tif and somename-imagex1y1.tif
        b3)  File extension. Type the file extension without fullstop. E.g. tif and not .tif.
        NOTE that the script will rename every file with the specified extension in all subfolders of the specified path. A template function is not implemented yet.
-       If the file type you want to rename is not included add it to line 129 of the script by adding -or ($extension -match "(?<![\w\d])jpg(?![\w\d])"), where jpg is        replaced by your desired extension.
+       If the file type you want to rename is not included add it to line 129 of the script by adding -or ($extension -match "(?<![\w\d])jpg(?![\w\d])"), where jpg is
+       replaced by your desired extension.
        
  # 3. Walktrough diff-2-txtfiles
       1) Set working directory
       2) Give old file name, include extension eg RawImgList.txt
       3) Give new file name, include extension eg RawImgList2.txt
-A new txtfile named Only_diff_import.txt will be created. This file includes only lines which are in the new file but NOT in the old one. This may help if imaging is going on for a longer period of time and parts of the stack were imported prematurely. Say an import txt file has been created when only sections 1-100 were imaged and these were stitched and aligned in TrakEM. If later on sections 101-200 finished imaging, the import txtfile can be created the same way as before. To then import ONLY the additional images to TrakEM one can diff the old and new import txt files. When choosing import from text file.. and the same base layer as before (z=0.0 [layer]) one will not import duplicates and can continue stitching/aligning the second part.
+A new txtfile named Only_diff_import.txt will be created. This file includes only lines which are in the new file but NOT in the old one. This may help if imaging is 
+going on for a longer period of time and parts of the stack were imported prematurely. Say an import txt file has been created when only sections 1-100 were imaged and 
+these were stitched and aligned in TrakEM. If later on sections 101-200 finished imaging, the import txtfile can be created the same way as before. To then import ONLY 
+the additional images to TrakEM one can diff the old and new import txt files. When choosing import from text file.. and the same base layer as before (z=0.0 [layer]) 
+one will not import duplicates and can continue stitching/aligning the second part.
 
 
 # 4. Import, stitching and aligning in TrakEM2 (https://github.com/trakem2/TrakEM2)
     1) In FIJI
-        1.1) File>New>TrakEM2 (blank). Set storage folder close to image location. If possible work from fastest available directory/disk. If multiple local disks are  available consider Raid0 disk striping to improve read/write speed.
-    # 2) Stitching in TrakEM2
+        1.1) File>New>TrakEM2 (blank). Set storage folder close to image location. If possible work from fastest available directory/disk. If multiple local disks are
+        available consider Raid0 disk striping to improve read/write speed.
+    2) Stitching in TrakEM2
         2.1) Adjust settings before importing
             a) Right click on canvas>Project>Project properties...
                 Image resizing mode > Area downsampling
@@ -108,14 +116,17 @@ A new txtfile named Only_diff_import.txt will be created. This file includes onl
                 maximal plateauwidth: 200
                 filter outliers: unticked
                   mean factor: 3
-                        Optional window5b if regularize was ticked: regularizer to translation and lambda to ~0.25. This only helps if desired trafo was rigid or                               more.
+                        Optional window5b if regularize was ticked: regularizer to translation and lambda to ~0.25. This only helps if desired trafo was rigid or   
+                        more.
             g) Window6: Miscellaneous
                 tiles are roughly in place: ticked (safes lots of comparisons/time if it is actually true unticked if the tiles are randomly placed)
                 sloppy overlap test (fast): unticked (does usually not work for me but may be worth a try on a single layer)
                 consider largest graph only: unticked
-                hide tiles from non largest graph: unticked (but can be ticked if tiles without stitching correspondences are annoyingly placed on top of main stitch                   area)
+                hide tiles from non largest graph: unticked (but can be ticked if tiles without stitching correspondences are annoyingly placed on top of main stitch   
+                area)
                 delete tiles from non largest graph: unticked
-#Repeat the stitching on single layers until good parameters were found. Usually changes in min and max image size have biggest influence on success/failure of     stitching attempts.
+#Repeat the stitching on single layers until good parameters were found. Usually changes in min and max image size have biggest influence on success/failure of    
+stitching attempts.
 
     3) Alignment
             a) Right click on canvas>Align>Align layers...
@@ -173,7 +184,8 @@ A new txtfile named Only_diff_import.txt will be created. This file includes onl
                 tiles are roughly in place: ticked (safes lots of comparisons/time if it is actually true unticked if the tiles are randomly placed)
                 sloppy overlap test (fast): unticked (does usually not work for me but may be worth a try on a single layer)
                 consider largest graph only: unticked
-                hide tiles from non largest graph: unticked (but can be ticked if tiles without stitching correspondences are annoyingly placed on top of main stitch                   area)
+                hide tiles from non largest graph: unticked (but can be ticked if tiles without stitching correspondences are annoyingly placed on top of main stitch
+                area)
                 delete tiles from non largest graph: unticked
     
     
