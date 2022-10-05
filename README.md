@@ -198,9 +198,9 @@ NOTE that to undo changes after an alignment, you have to hit UNDO 3 times
                transform
                (Pressing T (to transform) and Enter (to apply) will also work)
     7.2) Export directly to file or to RAM in FIJI if the final XY plane does not exceed 2GP (dimensions of max ~46300 x 46300 pixels)
-         a) Use the rectangle tool to draw your export ROI (or export whole canvas without rectangle ROI)
-         b) Right click > Export > Make flat image...
-         c) Choose
+            a) Use the rectangle tool to draw your export ROI (or export whole canvas without rectangle ROI)
+            b) Right click > Export > Make flat image...
+            c) Choose
                 Scale: 100 (Unless downscaling is desired)
                 Width: Defined by your rectangle (or canvas size)
                 height: Defined by your rectangle (or canvas size)
@@ -214,9 +214,9 @@ NOTE that to undo changes after an alignment, you have to hit UNDO 3 times
                 or
                 Export: Save to file (will save the stack to a later specified directory)
     7.3) Export a tiled stack if XY exceeds 2GP or tiled export is preferred
-         a) Use the rectangle tool to draw your export ROI (or export whole canvas without rectangle ROI)
-         b) Right click > Export > Make flat image...
-         c) Choose
+            a) Use the rectangle tool to draw your export ROI (or export whole canvas without rectangle ROI)
+            b) Right click > Export > Make flat image...
+            c) Choose
                 Scale: 100 (Unless downscaling is desired)
                 Width: Defined by your rectangle (or canvas size)
                 height: Defined by your rectangle (or canvas size)
