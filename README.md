@@ -62,9 +62,9 @@ A new txtfile named Only_diff_import.txt will be created. This file includes onl
 
 # 4. Import, stitching and aligning in TrakEM2 (https://github.com/trakem2/TrakEM2)
 1) In FIJI
-  I) File>New>TrakEM2 (blank). Set storage folder close to image location. If possible work from fastest available directory/disk. If multiple local disks are available consider Raid0 disk striping to improve read/write speed.
+  1.1) File>New>TrakEM2 (blank). Set storage folder close to image location. If possible work from fastest available directory/disk. If multiple local disks are available consider Raid0 disk striping to improve read/write speed.
 2) In TrakEM2
-  II) Adjust settings before importing
+  2.1) Adjust settings before importing
     a) Right click on canvas>Project>Project properties...
       Image resizing mode > Area downsampling
       Bucket side length > 40960 pixels
@@ -73,13 +73,13 @@ A new txtfile named Only_diff_import.txt will be created. This file includes onl
     #I noticed crashes when importing from slow drives when max cores were used, if crashes occur use slightly less.
     b) To be sure Right click on canvas>Project>Release Memory... slider to max value
        and Right click on canvas>Project>Flush image cache
-  III) Importing data from a text file
+  2.2) Importing data from a text file
     a) Right click on canvas>Import>Import from text file...
     b) Window1: Select the previously created text file
     c) Window2: Base layer 1: z=0.0 [layer]
                 Default setting for all other values
     d) Window3: Select Image directory (all images have to be at same level in one folder)
-  IV) Stitching (Usually the slowest step)
+  2.3) Stitching (Usually the slowest step)
     a) Right click on canvas>Align>Montage multiple layers... (Or All images in this layer... to test settings)
     b) Window1: Choose range (usually max range in both directions, except for Layer1 which will be empty)
     c) Window2: Montage mode > least squares (usually works best)
@@ -117,7 +117,7 @@ A new txtfile named Only_diff_import.txt will be created. This file includes onl
                 delete tiles from non largest graph: unticked
 #Repeat the stitching on single layers until good parameters were found. Usually changes in min and max image size have biggest influence on success/failure of     stitching attempts.
 
-V) Alignment
+3) Alignment
     a) Right click on canvas>Align>Align layers...
       Optional window 1a: If you have placed a rectangle ROI you can use it to only find features inside the rectangle for alignment. This can be helpful for fine             alignments of a smaller subROI in large planes.
     b) Window1: Align Layers 
