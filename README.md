@@ -189,7 +189,7 @@ NOTE that to undo changes after an alignment, you have to hit UNDO 3 times
 
   # 7. Export aligned data from TrakEM2
     7.1) Optional stack rotation before export
-            a) Right click on canvas > Link > Link images ...
+            a) Right click on canvas > Link > Link images...
             b) Options
                 Linking images to images (within their own layer only):
                 Link: all images to all images
@@ -197,7 +197,48 @@ NOTE that to undo changes after an alignment, you have to hit UNDO 3 times
             c) Select any image in the stack and Right click on canvas > Transform > Transform (affine) and apply your desired rotation by right click > apply 
                transform
                (Pressing T (to transform) and Enter (to apply) will also work)
-    7.2) Export directly to file or to RAM in FIJI if the final XY plane does not exceed 2GP in 8bit or 4GP in 16bit (dimensions of max ~46300 x 46300 pixels)
-         a) Use the rectangle tool to draw your export ROI
-            If you want to rotate the whole stack before exporting to maximize image content in the drawn rectangle
+    7.2) Export directly to file or to RAM in FIJI if the final XY plane does not exceed 2GP (dimensions of max ~46300 x 46300 pixels)
+         a) Use the rectangle tool to draw your export ROI (or export whole canvas without rectangle ROI)
+         b) Right click > Export > Make flat image...
+         c) Choose
+                Scale: 100 (Unless downscaling is desired)
+                Width: Defined by your rectangle (or canvas size)
+                height: Defined by your rectangle (or canvas size)
+                Type: defined by your data
+                Start: Whatever you want to export
+                End: Whatever you want to export
+                Include non-empty layers only: ticked (if you want to skip empty layers)
+                Background color: 0,0,0 is black
+                Best quality: unticked
+                Export: Show (will export the stack to RAM and show in FIJI)
+                or
+                Export: Save to file (will save the stack to a later specified directory)
+    7.3) Export a tiled stack if XY exceeds 2GP or tiled export is preferred
+         a) Use the rectangle tool to draw your export ROI (or export whole canvas without rectangle ROI)
+         b) Right click > Export > Make flat image...
+         c) Choose
+                Scale: 100 (Unless downscaling is desired)
+                Width: Defined by your rectangle (or canvas size)
+                height: Defined by your rectangle (or canvas size)
+                Type: defined by your data
+                Start: Whatever you want to export
+                End: Whatever you want to export
+                Include non-empty layers only: ticked (if you want to skip empty layers)
+                Background color: 0,0,0 is black
+                Best quality: unticked
+                Export: Save for web (CATMAID)
+                Format: tif (or else if preferred)
+                Tile side: sizes up to 20480 seem to work reliably, max size probably depends on available RAM
+                Directory structure: Your preferred dir structure
+                Strategy: Use mipmaps (multi-layer)
+                Skip empty tiles: ticked (sometimes empty tiles are desirable if next processing step requires all tiles to be present)
+                Use layer indices: ticked
+                Number of threads: Usually set to max available cores
+                
+NOTE that the exported images can be conveniently renamed using the Rename Utility, if they are to be copied to a single directory
+                
+                
+                
+                
+            
     
