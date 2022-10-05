@@ -60,7 +60,7 @@ The exe files CAN ONLY BE STOPPED by killing the task in the task manager or by 
 A new txtfile named Only_diff_import.txt will be created. This file includes only lines which are in the new file but NOT in the old one. This may help if imaging is going on for a longer period of time and parts of the stack were imported prematurely. Say an import txt file has been created when only sections 1-100 were imaged and these were stitched and aligned in TrakEM. If later on sections 101-200 finished imaging, the import txtfile can be created the same way as before. To then import ONLY the additional images to TrakEM one can diff the old and new import txt files. When choosing import from text file.. and the same base layer as before (z=0.0 [layer]) one will not import duplicates and can continue stitching/aligning the second part.
 
 
-#Import, stitching and aligning in TrakEM2 (https://github.com/trakem2/TrakEM2)
+# 4. Import, stitching and aligning in TrakEM2 (https://github.com/trakem2/TrakEM2)
 1) In FIJI
   I) File>New>TrakEM2 (blank). Set storage folder close to image location. If possible work from fastest available directory/disk. If multiple local disks are available consider Raid0 disk striping to improve read/write speed.
 2) In TrakEM2
