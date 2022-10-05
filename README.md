@@ -73,17 +73,17 @@ A new txtfile named Only_diff_import.txt will be created. This file includes onl
                 #I noticed crashes when importing from slow drives when max cores were used, if crashes occur use slightly less.
             b) To be sure Right click on canvas>Project>Release Memory... slider to max value
                and Right click on canvas>Project>Flush image cache
-  2.2) Importing data from a text file
-    a) Right click on canvas>Import>Import from text file...
-    b) Window1: Select the previously created text file
-    c) Window2: Base layer 1: z=0.0 [layer]
+        2.2) Importing data from a text file
+            a) Right click on canvas>Import>Import from text file...
+            b) Window1: Select the previously created text file
+            c) Window2: Base layer 1: z=0.0 [layer]
                 Default setting for all other values
-    d) Window3: Select Image directory (all images have to be at same level in one folder)
-  2.3) Stitching (Usually the slowest step)
-    a) Right click on canvas>Align>Montage multiple layers... (Or All images in this layer... to test settings)
-    b) Window1: Choose range (usually max range in both directions, except for Layer1 which will be empty)
-    c) Window2: Montage mode > least squares (usually works best)
-    d) Window3: Sift parameters
+            d) Window3: Select Image directory (all images have to be at same level in one folder)
+        2.3) Stitching (Usually the slowest step)
+            a) Right click on canvas>Align>Montage multiple layers... (Or All images in this layer... to test settings)
+            b) Window1: Choose range (usually max range in both directions, except for Layer1 which will be empty)
+            c) Window2: Montage mode > least squares (usually works best)
+            d) Window3: Sift parameters
                 Initial gaussian blur: 1.6
                 steps per scale octave: 3
                 minimum image size: 512 (Increased value to use more small features for stitching, since large features may not be sufficient to stitch accurately)
@@ -92,14 +92,14 @@ A new txtfile named Only_diff_import.txt will be created. This file includes onl
                 feature descriptor size: 8
                 feature descriptor orientation bins: 8
                 closest/next closest ratio: 0.92
-    e) Window4: Geometric Consensus Filter
+            e) Window4: Geometric Consensus Filter
                 maximal alignment error: try 100 px (if not working try 200)
                 minimal inlier ratio: 0.0
                 minimal number of inliers: 7
                 expected transformation: Rigid (Try translation if rigid was not working for some reason)
                 ignore constant background: unticked
                 tolerance: 0.5px (irrelevant here)
-    f) Window5: Alignment parameters
+            f) Window5: Alignment parameters
                 desired transformation: Translation (Try Rigid if translation was not working)
                 correspondence weight: 1
                 regularize: unticked (usually works, but ticked and more maximal iterations can help to improve stitching sometimes)
@@ -109,7 +109,7 @@ A new txtfile named Only_diff_import.txt will be created. This file includes onl
                 filter outliers: unticked
                   mean factor: 3
                         Optional window5b if regularize was ticked: regularizer to translation and lambda to ~0.25. This only helps if desired trafo was rigid or                               more.
-    g) Window6: Miscellaneous
+            g) Window6: Miscellaneous
                 tiles are roughly in place: ticked (safes lots of comparisons/time if it is actually true unticked if the tiles are randomly placed)
                 sloppy overlap test (fast): unticked (does usually not work for me but may be worth a try on a single layer)
                 consider largest graph only: unticked
@@ -117,12 +117,13 @@ A new txtfile named Only_diff_import.txt will be created. This file includes onl
                 delete tiles from non largest graph: unticked
 #Repeat the stitching on single layers until good parameters were found. Usually changes in min and max image size have biggest influence on success/failure of     stitching attempts.
 
-3) Alignment
-    a) Right click on canvas>Align>Align layers...
-      Optional window 1a: If you have placed a rectangle ROI you can use it to only find features inside the rectangle for alignment. This can be helpful for fine             alignments of a smaller subROI in large planes.
-    b) Window1: Align Layers 
+    3) Alignment
+            a) Right click on canvas>Align>Align layers...
+                Optional window 1a: If you have placed a rectangle ROI you can use it to only find features inside the rectangle for alignment. This can be helpful for
+                fine alignments of a smaller subROI in large planes.
+            b) Window1: Align Layers 
                 mode: least squares (linear feature correspondences)
-               Layer Range:
+                Layer Range:
                 first:set to whatever you want to align
                 reference: i use *None* but if a certain sections is a desirable template select that one.
                 last: set to whatever you want to align
@@ -130,23 +131,23 @@ A new txtfile named Only_diff_import.txt will be created. This file includes onl
                 use visible images only: ticked
                 propagate transform to first layer: unticked (or ticked if only a part of the stack will be aligned)
                 propagate transform to last layer: unticked (or ticked if only a part of the stack will be aligned)
-    d) Window2: Sift parameters
-              Scale Invariant Interest Point Detector:
+            d) Window2: Sift parameters
+                Scale Invariant Interest Point Detector:
                 Initial gaussian blur: 1.6
                 steps per scale octave: 3
                 minimum image size: 256 (Increased value to use a bit more small features for alignment, since large features may not be sufficient to align)
                                    [try something between 128 and 512 if 256 was not OK smaller values will omit smaller features]
                 maximum image size: something between 1024 and 2048 (aim for ~8000 detected features)
                                    [try smaller values first and increase if not enough features are found]
-              Feature Descriptor:
+                Feature Descriptor:
                 feature descriptor size: 8
                 feature descriptor orientation bins: 8
-              Local Descriptor Matching:
+                Local Descriptor Matching:
                 closest/next closest ratio: 0.92
-              Miscellaneous:
+                Miscellaneous:
                 clear cache: ticked
                 feature extraction threads: use max available cores (check how many via cmd > echo %NUMBER_OF_PROCESSORS%)
-    e) Window4: Geometric Filters
+            e) Window4: Geometric Filters
                 maximal alignment error: try 100 px (sometimes running multiple alignments with decreasing error can improve final alignment)
                 minimal inlier ratio: 0.0
                 minimal number of inliers: 12
@@ -155,11 +156,11 @@ A new txtfile named Only_diff_import.txt will be created. This file includes onl
                 wideset only: unticked
                 ignore constant background: usually unticked (ticked may help if large empty areas are present)
                   tolerance: 5 px
-              Layer neighbor range:
+                Layer neighbor range:
                 test maximally: 5 layers
                 give up after: 3 failures
                 #####################################Continue here
-    f) Window5: Alignment parameters
+            f) Window5: Alignment parameters
                 desired transformation: Translation (Try Rigid if translation was not working)
                 correspondence weight: 1
                 regularize: unticked (usually works, but ticked and more maximal iterations can help to improve stitching sometimes)
@@ -168,7 +169,7 @@ A new txtfile named Only_diff_import.txt will be created. This file includes onl
                 maximal plateauwidth: 200
                 filter outliers: unticked
                   mean factor: 3
-    g) Window6: Miscellaneous
+            g) Window6: Miscellaneous
                 tiles are roughly in place: ticked (safes lots of comparisons/time if it is actually true unticked if the tiles are randomly placed)
                 sloppy overlap test (fast): unticked (does usually not work for me but may be worth a try on a single layer)
                 consider largest graph only: unticked
