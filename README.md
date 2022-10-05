@@ -61,18 +61,18 @@ A new txtfile named Only_diff_import.txt will be created. This file includes onl
 
 
 # 4. Import, stitching and aligning in TrakEM2 (https://github.com/trakem2/TrakEM2)
-1) In FIJI
-  1.1) File>New>TrakEM2 (blank). Set storage folder close to image location. If possible work from fastest available directory/disk. If multiple local disks are available consider Raid0 disk striping to improve read/write speed.
-2) In TrakEM2
-  2.1) Adjust settings before importing
-    a) Right click on canvas>Project>Project properties...
-      Image resizing mode > Area downsampling
-      Bucket side length > 40960 pixels
-      Autosave every > 1000000 minutes
-      Number of threads for mipmaps > max available cores (check how many via cmd > echo %NUMBER_OF_PROCESSORS%)
-    #I noticed crashes when importing from slow drives when max cores were used, if crashes occur use slightly less.
-    b) To be sure Right click on canvas>Project>Release Memory... slider to max value
-       and Right click on canvas>Project>Flush image cache
+    1) In FIJI
+        1.1) File>New>TrakEM2 (blank). Set storage folder close to image location. If possible work from fastest available directory/disk. If multiple local disks are  available consider Raid0 disk striping to improve read/write speed.
+    2) In TrakEM2
+        2.1) Adjust settings before importing
+            a) Right click on canvas>Project>Project properties...
+                Image resizing mode > Area downsampling
+                Bucket side length > 40960 pixels
+                Autosave every > 1000000 minutes
+                Number of threads for mipmaps > max available cores (check how many via cmd > echo %NUMBER_OF_PROCESSORS%)
+                #I noticed crashes when importing from slow drives when max cores were used, if crashes occur use slightly less.
+            b) To be sure Right click on canvas>Project>Release Memory... slider to max value
+               and Right click on canvas>Project>Flush image cache
   2.2) Importing data from a text file
     a) Right click on canvas>Import>Import from text file...
     b) Window1: Select the previously created text file
