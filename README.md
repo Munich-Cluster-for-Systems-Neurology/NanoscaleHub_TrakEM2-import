@@ -63,7 +63,7 @@ A new txtfile named Only_diff_import.txt will be created. This file includes onl
 # 4. Import, stitching and aligning in TrakEM2 (https://github.com/trakem2/TrakEM2)
     1) In FIJI
         1.1) File>New>TrakEM2 (blank). Set storage folder close to image location. If possible work from fastest available directory/disk. If multiple local disks are  available consider Raid0 disk striping to improve read/write speed.
-    2) In TrakEM2
+    # 2) Stitching in TrakEM2
         2.1) Adjust settings before importing
             a) Right click on canvas>Project>Project properties...
                 Image resizing mode > Area downsampling
