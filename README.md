@@ -107,8 +107,8 @@ one will not import duplicates and can continue stitching/aligning the second pa
                 closest/next closest ratio: 0.92
             e) Window4: Geometric Consensus Filter
                 maximal alignment error: try 100 px (if not working try 200)
-                minimal inlier ratio: 0.0
-                minimal number of inliers: 7
+                minimal inlier ratio: 0.2
+                minimal number of inliers: 8
                 expected transformation: Rigid (Try translation if rigid was not working for some reason)
                 ignore constant background: unticked
                 tolerance: 0.5px (irrelevant here)
@@ -168,7 +168,7 @@ stitching attempts.
                 minimal inlier ratio: 0.0
                 minimal number of inliers: 12
                 expected transformation: Affine (Try rigid if affine was not working for some reason)
-                test multiple hypotheses: unticked
+                test multiple hypotheses: unticked (Try ticked if you are getting bad results)
                 wideset only: unticked
                 ignore constant background: usually unticked (ticked may help if large empty areas are present)
                   tolerance: 5 px
