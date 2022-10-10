@@ -71,7 +71,9 @@ the additional images to TrakEM one can diff the old and new import txt files. W
 one will not import duplicates and can continue stitching/aligning the second part.
 
 
-# 4. Import to TrakEM2 (https://github.com/trakem2/TrakEM2)
+# 4. Import to TrakEM2 (https://github.com/trakem2/TrakEM2) 
+(For additional guides see also https://docs.google.com/document/d/1FOhFFED8r5W5-7ZKepu7Ww0a89-nQrD8PedDg1Yza_o/edit and https://wikis.utexas.edu/display/khlab/TrakEM2+elastic+alignment)
+
     4.1) In FIJI
         1.1) File>New>TrakEM2 (blank). Set storage folder close to image location. If possible work from fastest available directory/disk. If multiple local disks are
         available consider Raid0 disk striping to improve read/write speed.
