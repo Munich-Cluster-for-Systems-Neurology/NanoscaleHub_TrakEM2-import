@@ -46,13 +46,13 @@ stitching dialog can be used later on.
        b2)  Specify the name giving folders level. Type parent, grandparent or greatgrand.
             A few examples. Folder structure is:
             
-            .\somename\anothername\z-location1\imagex1y1.tif
-            .\somename\anothername\z-location2\imagex1y1.tif
-            .\somename\anothername\z-location3\imagex1y1.tif
+            .\lorem\ipsum\z-location1\imagex1y1.tif
+            .\lorem\ipsum\z-location2\imagex1y1.tif
+            .\lorem\ipsum\z-location3\imagex1y1.tif
             
             Filenames if parent was typed are z-location1-imagex1y1.tif,z-location2-imagex1y1.tif and z-location3-imagex1y1.tif
-            Filenames if grandparent was typed are anothername-imagex1y1.tif,anothername-imagex1y1.tif and anothername-imagex1y1.tif
-            Filenames if greatgrand was typed are somename-imagex1y1.tif,somename-imagex1y1.tif and somename-imagex1y1.tif
+            Filenames if grandparent was typed are ipsum-imagex1y1.tif,ipsum-imagex1y1.tif and ipsum-imagex1y1.tif
+            Filenames if greatgrand was typed are lorem-imagex1y1.tif,lorem-imagex1y1.tif and lorem-imagex1y1.tif
        b3)  File extension. Type the file extension without fullstop. E.g. tif and not .tif.
        
 NOTE that the script will rename every file with the specified extension in all subfolders of the specified path. A template function is not implemented yet.
