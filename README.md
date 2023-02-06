@@ -4,7 +4,7 @@
 Either copy the content of the ps1-files to a powershell console or download the executables.
 Note that the exe-files were created with ps2exe (see https://github.com/MScholtes/PS2EXE) and may be falsely flagged as malicious programs by your antivirus software.
 The exe files CAN ONLY BE STOPPED by killing the task in the task manager or by finishing the questionnaire process. In general it is recommended to either copy paste
-to powershell or excecuting the ps1 scripts (right click > run with powershell)
+to powershell or excecuting the ps1 scripts (right click > run with powershell) instead of using the exe.
 
 
 # 2. Walkthrough Import/Rename
