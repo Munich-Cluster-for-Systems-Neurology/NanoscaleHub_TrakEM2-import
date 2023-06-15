@@ -73,6 +73,7 @@ one will not import duplicates and can continue stitching/aligning the second pa
 
 # 4. Import to TrakEM2 (https://github.com/trakem2/TrakEM2) 
 (Also check https://wikis.utexas.edu/display/khlab/TrakEM2+elastic+alignment)
+Note that if some images have to be reacquired, simply replacing them in the image source folder and using the regenerate mipmaps command in TrakEM2 will replace the old images with the new ones without restarting the project. Most likely stitching and alignment for the reimaged sections has to be repeated.
 
     4.1) In FIJI
         1.1) File>New>TrakEM2 (blank). Set storage folder close to image location. If possible work from fastest available directory/disk. If multiple local disks are
